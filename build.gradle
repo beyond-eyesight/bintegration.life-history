@@ -1,0 +1,32 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'beyondeyesight'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.keycloak.bom:keycloak-adapter-bom:18.0.0"
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation group: 'org.keycloak', name: 'keycloak-spring-boot-starter', version: '18.0.0'
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.13'
+
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
