@@ -1,0 +1,29 @@
+server:
+  port: 8082
+keycloak:
+  realm: bintegration
+  auth-server-url: http://localhost:8443
+  ssl-required: external
+  resource: LifeHistory
+  credentials.secret: HIBUPsfrFpEWSmKadMFcY7z3OZTk2Qap
+  use-resource-role-mappings: true
+  bearer-only: true
+  securityConstraints:
+    - authRoles: ['*']
+      securityCollections:
+        - name: times
+        - patterns: [ '/times/*' ]
+
+  policy-enforcer-config:
+    paths:
+      - name: times
+        path: /times/*
+        methods:
+          - method: GET
+            scopes:
+              - LifeHistory:view
+
+logging:
+  level:
+    org:
+      keycloak=debug:

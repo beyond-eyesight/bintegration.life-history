@@ -1,0 +1,13 @@
+{
+  "realm": "bintegration",
+  "auth-server-url" : "http://localhost:8443",
+  "ssl-required": "external",
+  "resource" : "LifeHistory",
+  "credentials": {
+    "secret": "secret"
+  },
+  "use-resource-role-mappings": true,
+  "bearer-only": true,
+
+
+}
