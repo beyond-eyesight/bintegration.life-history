@@ -18,10 +18,12 @@ dependencyManagement {
     }
 }
 
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation group: 'org.keycloak', name: 'keycloak-spring-boot-starter', version: '18.0.0'
     implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.13'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
