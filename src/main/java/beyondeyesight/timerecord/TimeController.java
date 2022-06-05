@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/times")
-public class TimesController {
+public class TimeController {
 
     @GetMapping
     public ResponseEntity<String> testGet() {
